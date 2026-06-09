@@ -1,165 +1,121 @@
-# E-commerce Retention Cohort Analysis
+# E-Commerce Customer Retention & Lifecycle Analysis
+
+## Dashboard Preview
+
+![Dashboard](images/dashboard.png)
+/Users/selmapak/Desktop/ecommerce-retention-project/Images/Screenshot 2026-06-09 at 10.53.07.png
+---
 
 ## Project Overview
 
-This project analyzes customer retention patterns using the Google BigQuery public e-commerce dataset.
+This project analyzes customer retention, repeat purchase behavior, customer lifecycle trends, and RFM segmentation using the Google BigQuery public e-commerce dataset.
 
-The goal is to evaluate repeat purchase behavior, identify churn patterns, and understand customer lifecycle dynamics.
+Using SQL and Excel, the analysis identifies retention weaknesses, evaluates acquisition channel performance, and uncovers opportunities to improve customer lifetime value through lifecycle interventions.
 
 ---
 
 ## Dataset
 
-Source: Google BigQuery Public Dataset  
+**Source:** Google BigQuery Public Dataset
+
 `bigquery-public-data.thelook_ecommerce`
 
-Tables used:
-- users  
-- orders  
+**Tables Used**
+
+* orders
+* users
 
 ---
 
 ## Business Questions
 
-- How many customers return after their first purchase?
-- What does repeat purchase behavior look like over time?
-- Which acquisition channels bring higher quality users?
-- When should lifecycle interventions occur?
-- How are customers distributed by value (RFM segmentation)?
+* How many customers return after their first purchase?
+* How quickly does customer retention decline over time?
+* Do acquisition channels influence retention performance?
+* When do repeat purchases typically occur?
+* Which customer segments represent the greatest churn risk?
+* What opportunities exist to improve customer lifetime value?
 
 ---
 
-## Key Metrics
+## Dashboard Overview
 
-**Total Orders:** 125,354  
-**Unique Purchasing Users:** 80,203  
-**Average Orders per Customer:** 1.56  
+The dashboard includes:
 
-This indicates moderate repeat purchase activity, but suggests further retention analysis is required.
-
----
-
-## Monthly Retention Results
-
-| Month | Retention Rate |
-|------|----------------|
-| 0 | 100% |
-| 1 | 3.67% |
-| 2 | 3.03% |
-| 3 | 2.70% |
-| 4 | 2.42% |
+* KPI Summary Cards
+* Monthly Retention Curve
+* Retention by Acquisition Channel
+* Customer Recency Distribution
+* RFM Customer Segmentation
 
 ---
 
-## Key Finding
+## Key Findings
 
-Customer retention drops sharply after the first purchase.
+### Customer Retention
 
-Only 3.67% of users return in month 1, and retention continues to decline steadily over time.
+* Month 1 retention is **3.67%**
+* Retention declines steadily to approximately **1.37%** by Month 12
+* Most users behave as one-time purchasers rather than repeat customers
 
-This suggests that the majority of users behave as one-time purchasers rather than recurring customers.
+### Acquisition Channels
 
----
+* Retention performance is relatively consistent across all traffic sources
+* Email achieved the highest Month 1 retention (**4.39%**)
+* Facebook showed the lowest Month 1 retention (**3.78%**)
 
-## Business Interpretation (Retention Overview)
+### Lifecycle Analysis
 
-- Acquisition is strong, but repeat engagement is weak  
-- Users are not consistently returning after first purchase  
-- Retention decline suggests limited lifecycle activation strategies  
-- Product or category may naturally support low-frequency purchases  
+* Most repeat purchases occur after **90+ days**
+* Early repeat purchase activity remains relatively weak
+* The first 30–90 days represent an important engagement opportunity
 
----
+### RFM Segmentation
 
-## Retention by Acquisition Channel (Month 1)
-
-### Results
-
-Retention rates across acquisition channels are relatively similar, ranging between **3.5% and 4.0%**.
-
-| Channel   | Month 1 Retention |
-|----------|------------------|
-| Search   | ~3.7% |
-| Organic  | ~3.7% |
-| Email    | ~4.0% |
-| Facebook | ~3.5% |
-| Display  | ~3.6% |
-
-### Key Insight
-
-Acquisition channel does not significantly impact early retention.  
-Retention behavior is largely consistent across traffic sources.
+* **82%** of customers fall into the **At Risk** segment
+* Champions account for only **2%** of customers
+* Loyal Customers represent approximately **6%** of the user base
 
 ---
 
-## Repeat Purchase Segmentation
+## Business Recommendations
 
-### Results
+Based on the analysis, potential retention initiatives include:
 
-Most users are one-time buyers, while a smaller group accounts for multiple purchases.
-
-- One-time buyers: dominant segment  
-- Repeat users (2+ orders): smaller proportion  
-- Power users: minimal but high-value group  
-
-### Key Insight
-
-Customer base is heavily skewed toward one-time transactional behavior.
+* Post-purchase onboarding campaigns
+* Customer reactivation programs
+* Product replenishment reminders
+* Lifecycle email automation
+* Personalized retention incentives
 
 ---
 
-## Lifecycle Intervention Opportunities
+## SQL Analyses Performed
 
-### Results
-
-| Repeat Window | Users |
-|--------------|------|
-| 90+ Days | 24,047 |
-| 31–60 Days | 2,594 |
-| 8–30 Days | 2,449 |
-| 61–90 Days | 2,251 |
-| 0–7 Days | 1,528 |
-
-### Key Insight
-
-Most repeat purchases occur after 90+ days.
-
-Early retention (0–30 days) is weak, indicating a missed opportunity for early lifecycle engagement.
-
----
-
-## RFM Customer Segmentation
-
-### Results
-
-| Segment | Users |
-|---------|------|
-| At Risk | 65,050 |
-| Recent Buyers | 8,321 |
-| Loyal Customers | 4,686 |
-| Champions | 1,737 |
-
-### Key Insight
-
-The majority of users fall into the “At Risk” segment, while only a small portion are high-value customers.
-
----
-
-## Overall Business Takeaways
-
-- Retention is the primary weakness in the customer lifecycle  
-- Acquisition channels are not strong differentiators of retention quality  
-- Repeat purchase behavior is concentrated in a small user segment  
-- Early lifecycle (first 30–90 days) is the most critical intervention window  
-- Customer base is heavily skewed toward low-engagement users  
+1. Total Order Volume
+2. Unique Purchasing Users
+3. Acquisition Channel Distribution
+4. Cohort Retention Analysis
+5. Retention by Acquisition Channel
+6. Repeat Purchase Segmentation
+7. Lifecycle Intervention Analysis
+8. RFM Customer Segmentation
 
 ---
 
 ## Skills Demonstrated
 
-- SQL (BigQuery)  
-- Cohort Analysis  
-- Retention Analysis  
-- Behavioral Segmentation  
-- RFM Modeling  
-- Business Interpretation  
-- Product Analytics Thinking  
+* SQL
+* Common Table Expressions (CTEs)
+* Window Functions
+* Cohort Analysis
+* Retention Analysis
+* Customer Segmentation
+* RFM Analysis
+* Data Visualization
+* Excel Dashboard Design
+* Business Analytics
+
+---
+
+
