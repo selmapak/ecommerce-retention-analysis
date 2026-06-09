@@ -3,7 +3,6 @@
 ## Dashboard Preview
 
 ![Dashboard](images/dashboard.png)
-/Users/selmapak/Desktop/ecommerce-retention-project/Images/Screenshot 2026-06-09 at 10.53.07.png
 ---
 
 ## Project Overview
